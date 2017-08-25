@@ -1,0 +1,67 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.simple</groupId>
+	<artifactId>Microutils</artifactId>
+	<version>0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>Microutils</name>
+	<url>http://www.simple.org/Microutils</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<junit.version>4.12</junit.version>
+		<l4j.version>1.2.17</l4j.version>
+		<conf.version>2.1.1</conf.version>
+		<cbutils.version>1.9.3</cbutils.version>
+		<aclang.version>3.6</aclang.version>
+		<surefire.version>2.20</surefire.version>
+		<bit.utils.version>1.1</bit.utils.version>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>${surefire.version}</version>
+				<configuration>
+					<parallel>methods</parallel>
+					<threadCount>5</threadCount>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.apache.maven.surefire</groupId>
+						<artifactId>surefire-junit47</artifactId>
+						<version>${surefire.version}</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${l4j.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.bit.utils</groupId>
+			<artifactId>Array</artifactId>
+			<version>${bit.utils.version}</version>
+		</dependency>
+	</dependencies>
+</project>
